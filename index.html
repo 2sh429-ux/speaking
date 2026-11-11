@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>말하기 루틴</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="말하기 루틴">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#f5f3ee">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAADw0lEQVR4Xu3dTVLbQBCAUSfFPhwwnCAchxtwQY6QhatULrBktTw/mp731lgyTOsbCafIrz///l7gnt9+LKwxHBgO4pQD5SBOOVAO4pQD5SBOOVAO4pQD5SBOOVAO4pQD5SBOOVAO4pQD5SBOOVAO4pQD5SBOOVAO4pQD5SBOOVAO4pQD5SBOOVAO4l7iL8nm6+Nz7Vt6fX/L9t1G/Jr2D8ZtzMRPc07JjMMRGotbs43IXMNxeCzmHJGJnlaKTMblUuw45zfLcJSajKuyRzutKYajxlrWOObZ5B+OeqtY78gnkXw4aq9f7eP3lXk42qxcm7N0kXk4eFLa4Wh5Qbc8V0tph4Pn5RyO9pdy+zM2kHM4KMJwsCrhcPQqfK/z1pNwOCjFcDDTtkIpyoFyEKccKAdxyoFyEKccKAdxyoFyEKccKAdxyoFyEKccKAdxyoFyEKccKAdxyoFyEKccKAdxyoFyEKccKAdxyoFyEJewHL3+V5Re560n4XBQiuFgsnuO9oVvf8YGlINVA/wfb3f/hOOeK7XZ3348/Gb2vLAj5WCye46rNtdlm7N0kbwctVeu9vH7Sj4cVfuRezIulxGG4+4ahG42a6xi6JiH76n7yl+OGvcfockY1yzDUXB/mWQyxthW1oR2lqUfzyzt6/uRlx94nycxRjmeWdGfDqzxgZdsK/sdVfJS6bjntyzPxpU9xBLWM/ZwfH18Pr9+zx9hw7h7ykj3HGtLeOaf/tp7qzqOBY1xz0EXIw3HWPEYPRsjbSvbzra5nO39HDPAv+f4psbDRdlfb9d4h12MtK1cjXI399Nw73zsR9m7Uem4Bjl2k8V45XgYj14rtH3ejiN72JDDccL5yDcZYz+tbF+LXx+fbRLy8EQjNuNq1HLsvDl9uHLP2HPwcSdj+OF4uL9c7VnFkJ0HHHoyLpcUTyuv7297dpDlaw6v2Z6zLA6f5TySPMpeV2Ln4t1+2cMl3HnMWw+POYrxfkO67cBalpVmMjLcc3zTd236nr24bOVYNE5IsrG4Sjscy3NK8evpVK2qKvlw1AtJylR8M8twlJqSGWZiMd1w3Np5XzLVQNyaeji2czLtTCzG/myFqgwHqwwHhoM45UA5iFMOlIM45UA5iFMOlIO4tB+87fzEtZSUn9LZVrCtEKccKAdxyoFyEJf2UZbn2VawrRCnHCgHccqBchCnHCgHccqBchCnHCgHccqBchCnHCgHccqBchCnHCgHccqBchCnHCgHccqBchCnHCgHccqBchCnHCgHccqBchCnHKz6D2Wp6qJ+HDJlAAAAAElFTkSuQmCC">
+<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAADw0lEQVR4Xu3dTVLbQBCAUSfFPhwwnCAchxtwQY6QhatULrBktTw/mp731lgyTOsbCafIrz///l7gnt9+LKwxHBgO4pQD5SBOOVAO4pQD5SBOOVAO4pQD5SBOOVAO4pQD5SBOOVAO4pQD5SBOOVAO4pQD5SBOOVAO4pQD5SBOOVAO4pQD5SBOOVAO4l7iL8nm6+Nz7Vt6fX/L9t1G/Jr2D8ZtzMRPc07JjMMRGotbs43IXMNxeCzmHJGJnlaKTMblUuw45zfLcJSajKuyRzutKYajxlrWOObZ5B+OeqtY78gnkXw4aq9f7eP3lXk42qxcm7N0kXk4eFLa4Wh5Qbc8V0tph4Pn5RyO9pdy+zM2kHM4KMJwsCrhcPQqfK/z1pNwOCjFcDDTtkIpyoFyEKccKAdxyoFyEKccKAdxyoFyEKccKAdxyoFyEKccKAdxyoFyEKccKAdxyoFyEKccKAdxyoFyEKccKAdxyoFyEJewHL3+V5Re560n4XBQiuFgsnuO9oVvf8YGlINVA/wfb3f/hOOeK7XZ3348/Gb2vLAj5WCye46rNtdlm7N0kbwctVeu9vH7Sj4cVfuRezIulxGG4+4ahG42a6xi6JiH76n7yl+OGvcfockY1yzDUXB/mWQyxthW1oR2lqUfzyzt6/uRlx94nycxRjmeWdGfDqzxgZdsK/sdVfJS6bjntyzPxpU9xBLWM/ZwfH18Pr9+zx9hw7h7ykj3HGtLeOaf/tp7qzqOBY1xz0EXIw3HWPEYPRsjbSvbzra5nO39HDPAv+f4psbDRdlfb9d4h12MtK1cjXI399Nw73zsR9m7Uem4Bjl2k8V45XgYj14rtH3ejiN72JDDccL5yDcZYz+tbF+LXx+fbRLy8EQjNuNq1HLsvDl9uHLP2HPwcSdj+OF4uL9c7VnFkJ0HHHoyLpcUTyuv7297dpDlaw6v2Z6zLA6f5TySPMpeV2Ln4t1+2cMl3HnMWw+POYrxfkO67cBalpVmMjLcc3zTd236nr24bOVYNE5IsrG4Sjscy3NK8evpVK2qKvlw1AtJylR8M8twlJqSGWZiMd1w3Np5XzLVQNyaeji2czLtTCzG/myFqgwHqwwHhoM45UA5iFMOlIM45UA5iFMOlIO4tB+87fzEtZSUn9LZVrCtEKccKAdxyoFyEJf2UZbn2VawrRCnHCgHccqBchCnHCgHccqBchCnHCgHccqBchCnHCgHccqBchCnHCgHccqBchCnHCgHccqBchCnHCgHccqBchCnHCgHccqBchCnHKz6D2Wp6qJ+HDJlAAAAAElFTkSuQmCC">
+<style>
+:root{
+  --bg:#f5f3ee; --card:#ffffff; --ink:#1d2126; --mute:#6b7280; --line:#e4e0d6;
+  --accent:#0f6b5c; --accent-ink:#ffffff; --accent-soft:#dff1ec;
+  --warn:#9a5b0a; --warn-soft:#fdf0dc; --danger:#b42318; --rec:#d92d20;
+  --r:16px; --shadow:0 1px 2px rgba(20,20,10,.05),0 8px 24px rgba(20,20,10,.05);
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#14171a; --card:#1d2227; --ink:#eceff1; --mute:#9aa4ad; --line:#2c333a;
+    --accent:#4fc3a8; --accent-ink:#06231d; --accent-soft:#17352e;
+    --warn:#f0b35a; --warn-soft:#3a2d14; --danger:#ff8a80; --rec:#ff6b5e;
+    --shadow:none;
+  }
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.6 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",system-ui,sans-serif;
+  -webkit-text-size-adjust:100%}
+#app{max-width:760px;margin:0 auto;min-height:100vh;min-height:100dvh;display:flex;flex-direction:column}
+#view{flex:1;padding:max(20px,env(safe-area-inset-top)) 18px 120px}
+h1{font-size:26px;line-height:1.25;margin:4px 0 4px;letter-spacing:-.02em}
+h2{font-size:18px;margin:0 0 10px;letter-spacing:-.01em}
+h3{font-size:15px;margin:0 0 6px}
+p{margin:0 0 10px}
+.mute{color:var(--mute)}
+.small{font-size:13.5px}
+.eyebrow{font-size:13px;color:var(--mute);letter-spacing:.02em;margin-bottom:2px}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px;margin:14px 0;box-shadow:var(--shadow)}
+.card.soft{background:var(--accent-soft);border-color:transparent;box-shadow:none}
+.card.warn{background:var(--warn-soft);border-color:transparent;box-shadow:none}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.row.between{justify-content:space-between}
+.grow{flex:1}
+.pill{display:inline-block;font-size:12.5px;padding:3px 10px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-weight:600}
+.pill.gray{background:var(--line);color:var(--mute)}
+
+.btn{appearance:none;border:1px solid var(--line);background:var(--card);color:var(--ink);
+  font:inherit;font-weight:600;font-size:15px;padding:11px 16px;border-radius:12px;cursor:pointer;min-height:46px}
+.btn:active{transform:scale(.98)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn.ghost{background:transparent}
+.btn.danger{color:var(--danger);border-color:var(--danger);background:transparent}
+.btn.big{width:100%;min-height:56px;font-size:17px;border-radius:14px}
+.btn.rec{background:var(--rec);border-color:var(--rec);color:#fff}
+.btn[disabled]{opacity:.45;pointer-events:none}
+.btn.icon{min-width:46px;padding:11px 12px}
+
+label{display:block;font-size:13.5px;font-weight:600;color:var(--mute);margin:12px 0 6px}
+.field{width:100%;font:inherit;font-size:16px;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
+textarea.field{min-height:110px;resize:vertical;line-height:1.55}
+.field:focus{outline:2px solid var(--accent);outline-offset:1px}
+.switch{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 0;border-top:1px solid var(--line)}
+.switch:first-of-type{border-top:0}
+.switch input{width:22px;height:22px;accent-color:var(--accent)}
+
+.big-timer{font-size:68px;font-weight:700;letter-spacing:-.03em;text-align:center;font-variant-numeric:tabular-nums;line-height:1.1}
+.big-timer.rec{color:var(--rec)}
+.timerbox{text-align:center;padding:10px 0 16px}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--rec);margin-right:8px;animation:pulse 1.1s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+.live{min-height:84px;padding:12px 14px;border-radius:12px;background:var(--bg);color:var(--ink);font-size:16px;margin:8px 0 14px;white-space:pre-wrap}
+.live.empty{color:var(--mute)}
+
+.progress{display:flex;gap:6px;margin:6px 0 16px}
+.progress i{flex:1;height:5px;border-radius:5px;background:var(--line)}
+.progress i.done{background:var(--accent)}
+.progress i.now{background:var(--accent);opacity:.45}
+.topic{font-size:21px;font-weight:700;line-height:1.35;letter-spacing:-.01em}
+.quote{border-left:3px solid var(--line);padding:4px 0 4px 12px;margin:8px 0;font-size:17px}
+.fixed{border-left:3px solid var(--accent);padding:4px 0 4px 12px;margin:8px 0;font-size:17px;font-weight:600}
+.list{list-style:none;margin:0;padding:0}
+.list li{padding:12px 0;border-top:1px solid var(--line)}
+.list li:first-child{border-top:0}
+.kv{display:flex;justify-content:space-between;gap:12px;padding:6px 0}
+audio{width:100%;margin-top:6px}
+details{margin:6px 0}
+summary{cursor:pointer;font-weight:600;padding:6px 0}
+
+#tabs{position:fixed;left:0;right:0;bottom:0;display:flex;justify-content:center;gap:0;
+  background:color-mix(in srgb,var(--card) 92%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-top:1px solid var(--line);padding:6px 8px calc(6px + env(safe-area-inset-bottom))}
+#tabs button{flex:1;max-width:190px;appearance:none;border:0;background:transparent;color:var(--mute);font:inherit;font-size:12px;font-weight:600;
+  display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 4px;border-radius:12px;cursor:pointer}
+#tabs button.on{color:var(--accent)}
+body.flow #tabs{display:none}
+body.flow #view{padding-bottom:40px}
+
+#toast{position:fixed;left:50%;bottom:calc(92px + env(safe-area-inset-bottom));transform:translateX(-50%) translateY(20px);
+  background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:12px;font-size:14px;opacity:0;pointer-events:none;
+  transition:.25s;max-width:90vw;z-index:20;text-align:center}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.err{color:var(--danger);font-size:14px}
+.stat{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;text-align:center}
+.stat b{display:block;font-size:26px;letter-spacing:-.02em}
+.stat span{font-size:12.5px;color:var(--mute)}
+@media (min-width:700px){ #view{padding-left:28px;padding-right:28px} }
+
+</style>
+</head>
+<body>
+<div id="app">
+  <main id="view"></main>
+  <nav id="tabs" aria-label="메뉴">
+    <button data-tab="today" class="on">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>
+      <span>오늘</span>
+    </button>
+    <button data-tab="weekly">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>
+      <span>주간 점검</span>
+    </button>
+    <button data-tab="records">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V9M10 19V5M16 19v-7M22 19H2"/></svg>
+      <span>기록</span>
+    </button>
+    <button data-tab="settings">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>
+      <span>설정</span>
+    </button>
+  </nav>
+</div>
+<div id="toast" role="status"></div>
+<script>
+'use strict';
+/* =========================================================
+   core.js — helpers, state, data banks, audio, AI, TTS
+   ========================================================= */
+
+/* ---------- helpers ---------- */
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const pad = n => String(n).padStart(2, '0');
+const fmtDate = d => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+const todayStr = () => fmtDate(new Date());
+const parseDate = s => { const [y, m, d] = s.split('-').map(Number); return new Date(y, m - 1, d); };
+const addDays = (s, n) => { const d = parseDate(s); d.setDate(d.getDate() + n); return fmtDate(d); };
+const diffDays = (a, b) => { const [y1, m1, d1] = a.split('-').map(Number); const [y2, m2, d2] = b.split('-').map(Number); return Math.round((Date.UTC(y2, m2 - 1, d2) - Date.UTC(y1, m1 - 1, d1)) / 864e5); };
+const weekStart = s => { const d = parseDate(s); d.setDate(d.getDate() - ((d.getDay() + 6) % 7)); return fmtDate(d); };
+const rnd = a => a[Math.floor(Math.random() * a.length)];
+const fmtT = sec => `${Math.floor(sec / 60)}:${pad(sec % 60)}`;
+const wordCount = t => (String(t || '').trim().match(/[A-Za-z']+/g) || []).length;
+const sentCount = t => (String(t || '').split(/[.!?]+/).filter(x => x.trim().length > 2)).length;
+const WD = ['일', '월', '화', '수', '목', '금', '토'];
+const fmtKDate = s => { const d = parseDate(s); return `${d.getMonth() + 1}월 ${d.getDate()}일 (${WD[d.getDay()]})`; };
+
+/* ---------- state ---------- */
+const KEY = 'spk.v1';
+const DEFAULTS = {
+  startDate: null, dayAdjust: 0,
+  apiKey: '', model: 'claude-sonnet-5-5',
+  openaiKey: '', ttsMode: 'browser', openaiVoice: 'alloy', voiceURI: '', rate: 0.9,
+  useRecog: true, useRec: true,
+  sessions: {}, reviews: [], weekly: [], tooLong: {}, usedTopics: []
+};
+function loadState() {
+  let saved = null;
+  try { saved = JSON.parse(localStorage.getItem(KEY) || 'null'); } catch (e) { /* storage unavailable */ }
+  return Object.assign(JSON.parse(JSON.stringify(DEFAULTS)), saved || {});
+}
+let S = loadState();
+function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) { /* ignore */ } }
+if (!S.startDate) { S.startDate = todayStr(); save(); }
+
+function dayNumber(date) {
+  const d = date || todayStr();
+  return Math.max(1, diffDays(S.startDate, d) + 1 + (S.dayAdjust || 0));
+}
+const phaseOf = day => (day <= 14 ? 0 : day <= 28 ? 1 : 2);
+
+const PHASES = [
+  { name: '패턴 익히기', range: '1~14일차', sentences: '2~3문장',
+    goal: '패턴에 단어를 바꿔 끼워 짧은 문장을 끊김 없이 말하기. 2~3문장 이어 말하기.' },
+  { name: '이유·예시 붙이기', range: '15~28일차', sentences: '4~5문장',
+    goal: '4~5문장으로 이유·예시 붙이기. 하나의 주제로 30~60초, 과거 경험을 순서대로 말하기.' },
+  { name: '시제 정확도', range: '29일차 이후', sentences: '문단 길이',
+    goal: '현재·과거·미래를 모두 쓴 문단 길이 답변. 시제 정확도에 집중. 돌발상황 롤플레이는 주 2회.' }
+];
+/* round lengths (sec). index 0 is the extra "one step shorter" tier for phase 1. */
+const TIERS = [[20, 15, 10], [30, 20, 15], [60, 45, 30], [90, 60, 45]];
+const tierIndex = (day, date) => Math.max(0, phaseOf(day) + 1 - ((S.tooLong && S.tooLong[date]) || 0));
+const roundLens = (day, date) => TIERS[tierIndex(day, date)];
+const WEEKLY_SECS = [30, 45, 60];
+
+/* ---------- topic banks ---------- */
+const TOPICS = [
+  ['My morning routine', 'My favorite food', 'My family', 'What I do on weekends', 'My hometown', 'My best friend',
+    'A place where I like to relax', 'My daily commute', 'A hobby I enjoy', 'My room', 'What I usually eat for lunch',
+    'My favorite season', 'A person I admire', 'My plans for tonight'],
+  ['The best meal I have ever had', 'A trip I took recently', 'A day that did not go as planned', 'A time I helped someone',
+    'My first day at a new place', 'A gift I remember', 'Something I learned the hard way', 'A memorable birthday',
+    'A movie or show I watched recently', 'A time I got lost', 'A mistake I made at work or school', 'The last time I was really tired'],
+  ['A goal I am working on (past, present, future)', 'How my daily life has changed in the last year',
+    'A skill I am learning and why', 'A place I lived and what I would do differently', 'My job or study: what I did, what I do, what I will do',
+    'A habit I want to build', 'How I used to study English and how I study now', 'A decision I made and how it turned out',
+    'My plans after I reach my current goal']
+];
+const ROLEPLAYS = [
+  'Your restaurant reservation was cancelled. Explain the problem and ask for a solution.',
+  'Your new headphones stopped working after two days. Talk to the store staff.',
+  'Your flight is delayed and you will miss hotel check-in. Call the hotel.',
+  'A package arrived damaged. Call customer service.',
+  'You are late for a meeting because the subway stopped. Explain to your colleague.',
+  'Someone is sitting in your reserved train seat. Politely handle it.',
+  'You ordered the wrong size online. Ask for an exchange.',
+  'The Wi-Fi in your hotel room does not work. Talk to the front desk.',
+  'A friend cancels plans at the last minute. Respond naturally.',
+  'You left your bag in a taxi. Call the taxi company.'
+];
+const SITUATIONS = [
+  'What would you do if it suddenly started raining and you had no umbrella?',
+  'What would you do if you lost your phone on the bus?',
+  'What would you say if a friend arrived thirty minutes late?',
+  'What would you do if your alarm did not ring this morning?',
+  'What would you do if the restaurant was full when you arrived?',
+  'What would you say if you wanted to change your seat at a cafe?'
+];
+const PAST_QS = [
+  'Tell me about a memorable trip you took. What happened first, next, and last?',
+  'Tell me about something that went wrong recently and what you did about it.',
+  'Tell me about a time you learned something new. How did you start?',
+  'Tell me about the most memorable meal you have had.',
+  'Tell me about a time you had to wait a long time. What did you do?',
+  'Tell me about your last weekend in order, from morning to night.',
+  'Tell me about a time you helped someone or someone helped you.'
+];
+function pickTopic(phase, avoid) {
+  const used = new Set([...(S.usedTopics || []), ...(avoid || [])]);
+  const pool = TOPICS[phase].filter(t => !used.has(t));
+  return rnd(pool.length ? pool : TOPICS[phase]);
+}
+function pickFrom(arr, avoid) {
+  const used = new Set([...(S.usedTopics || []), ...(avoid || [])]);
+  const pool = arr.filter(t => !used.has(t));
+  return rnd(pool.length ? pool : arr);
+}
+
+/* ---------- toast / view ---------- */
+let toastTimer = null;
+function toast(msg) {
+  const t = $('#toast'); if (!t) return;
+  t.textContent = msg; t.classList.add('show');
+  clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.remove('show'), 2800);
+}
+const CLEAN = [];
+function onLeave(fn) { CLEAN.push(fn); }
+function runCleanup() { while (CLEAN.length) { try { CLEAN.pop()(); } catch (e) { /* ignore */ } } }
+function view(html) { runCleanup(); const v = $('#view'); v.innerHTML = html; try { window.scrollTo(0, 0); } catch (e) { /* ignore */ } return v; }
+
+/* ---------- IndexedDB for audio ---------- */
+const memStore = { rec: {}, tts: {} };
+function idb() {
+  return new Promise((res, rej) => {
+    if (!window.indexedDB) return rej(new Error('no idb'));
+    let r;
+    try { r = indexedDB.open('spk-audio', 1); } catch (e) { return rej(e); }
+    r.onupgradeneeded = () => { r.result.createObjectStore('rec'); r.result.createObjectStore('tts'); };
+    r.onsuccess = () => res(r.result);
+    r.onerror = () => rej(r.error);
+  });
+}
+async function dbPut(store, key, val) {
+  memStore[store][key] = val;
+  try {
+    const d = await idb();
+    return await new Promise((res, rej) => { const t = d.transaction(store, 'readwrite'); t.objectStore(store).put(val, key); t.oncomplete = () => res(true); t.onerror = () => rej(t.error); });
+  } catch (e) { return false; }
+}
+async function dbGet(store, key) {
+  if (memStore[store][key]) return memStore[store][key];
+  try {
+    const d = await idb();
+    return await new Promise((res, rej) => { const q = d.transaction(store, 'readonly').objectStore(store).get(key); q.onsuccess = () => res(q.result || null); q.onerror = () => rej(q.error); });
+  } catch (e) { return null; }
+}
+
+/* ---------- timer / beep ---------- */
+let actx = null;
+function unlockAudio() {
+  try {
+    if (!actx) actx = new (window.AudioContext || window.webkitAudioContext)();
+    if (actx.state === 'suspended') actx.resume();
+  } catch (e) { /* ignore */ }
+}
+function beep(times = 1) {
+  try {
+    unlockAudio(); if (!actx) return;
+    for (let i = 0; i < times; i++) {
+      const o = actx.createOscillator(), g = actx.createGain();
+      o.type = 'sine'; o.frequency.value = 880;
+      o.connect(g); g.connect(actx.destination);
+      const t0 = actx.currentTime + i * 0.28;
+      g.gain.setValueAtTime(0.0001, t0); g.gain.exponentialRampToValueAtTime(0.25, t0 + 0.02); g.gain.exponentialRampToValueAtTime(0.0001, t0 + 0.2);
+      o.start(t0); o.stop(t0 + 0.22);
+    }
+  } catch (e) { /* ignore */ }
+}
+function runTimer(seconds, onTick, onDone) {
+  const end = Date.now() + seconds * 1000;
+  let live = true;
+  const id = setInterval(() => {
+    const left = Math.max(0, Math.ceil((end - Date.now()) / 1000));
+    if (live) onTick(left);
+    if (left <= 0) { clearInterval(id); if (live) { live = false; onDone(); } }
+  }, 200);
+  onTick(seconds);
+  return { stop() { live = false; clearInterval(id); } };
+}
+
+/* ---------- capture: recording + speech recognition ---------- */
+class Capture {
+  constructor() { this.chunks = []; this.base = ''; this.fin = ''; this.int = ''; this.running = false; this.msgs = []; this.mime = ''; }
+  get text() { return [this.base, this.fin, this.int].filter(Boolean).join(' ').replace(/\s+/g, ' ').trim(); }
+  async start(onText) {
+    this.onText = onText; this.running = true;
+    const res = { mic: false, recog: false };
+    if (S.useRec) {
+      try {
+        if (!navigator.mediaDevices || !window.MediaRecorder) throw new Error('unsupported');
+        this.stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        const types = ['audio/mp4', 'audio/webm;codecs=opus', 'audio/webm', 'audio/ogg'];
+        const mime = types.find(t => MediaRecorder.isTypeSupported && MediaRecorder.isTypeSupported(t)) || '';
+        this.mr = mime ? new MediaRecorder(this.stream, { mimeType: mime }) : new MediaRecorder(this.stream);
+        this.mime = this.mr.mimeType || mime;
+        this.mr.ondataavailable = e => { if (e.data && e.data.size) this.chunks.push(e.data); };
+        this.mr.start(1000);
+        res.mic = true;
+      } catch (e) { this.msgs.push('녹음을 시작하지 못했어요. 마이크 권한을 확인해 주세요.'); }
+    }
+    if (S.useRecog) {
+      const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+      if (!SR) { this.msgs.push('이 브라우저는 음성 인식을 지원하지 않아요. 아래 칸에 직접 입력할 수 있어요.'); }
+      else {
+        try {
+          const r = new SR();
+          r.lang = 'en-US'; r.continuous = true; r.interimResults = true; r.maxAlternatives = 1;
+          r.onresult = e => {
+            let f = '', n = '';
+            for (let i = 0; i < e.results.length; i++) { const x = e.results[i]; if (x.isFinal) f += x[0].transcript + ' '; else n += x[0].transcript; }
+            this.fin = f.trim(); this.int = n.trim();
+            if (this.onText) this.onText(this.text);
+          };
+          r.onerror = e => {
+            if (e.error === 'not-allowed' || e.error === 'service-not-allowed') { this.recogDead = true; this.msgs.push('음성 인식 권한이 없어요.'); }
+            else if (e.error !== 'no-speech' && e.error !== 'aborted') this.msgs.push('음성 인식 오류: ' + e.error);
+          };
+          r.onend = () => {
+            this.base = [this.base, this.fin].filter(Boolean).join(' '); this.fin = ''; this.int = '';
+            if (this.running && !this.recogDead) { try { r.start(); } catch (e) { /* ignore */ } }
+          };
+          r.start(); this.sr = r; res.recog = true;
+        } catch (e) { this.msgs.push('음성 인식을 시작하지 못했어요.'); }
+      }
+    }
+    return res;
+  }
+  stop() {
+    this.running = false;
+    try { if (this.sr) this.sr.stop(); } catch (e) { /* ignore */ }
+    return new Promise(resolve => {
+      const done = () => {
+        try { if (this.stream) this.stream.getTracks().forEach(t => t.stop()); } catch (e) { /* ignore */ }
+        const blob = this.chunks.length ? new Blob(this.chunks, { type: this.mime || 'audio/mp4' }) : null;
+        setTimeout(() => resolve({ text: this.text, blob }), 300);
+      };
+      if (this.mr && this.mr.state !== 'inactive') { this.mr.onstop = done; try { this.mr.stop(); } catch (e) { done(); } }
+      else done();
+    });
+  }
+}
+
+/* ---------- Claude API ---------- */
+async function claude(system, user, maxTokens = 1400) {
+  if (!S.apiKey) throw new Error('NO_KEY');
+  const r = await fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: {
+      'content-type': 'application/json', 'x-api-key': S.apiKey, 'anthropic-version': '2023-06-01',
+      'anthropic-dangerous-direct-browser-access': 'true'
+    },
+    body: JSON.stringify({ model: S.model, max_tokens: maxTokens, system, messages: [{ role: 'user', content: user }] })
+  });
+  if (!r.ok) { const t = await r.text(); throw new Error('API ' + r.status + ' ' + t.slice(0, 160)); }
+  const j = await r.json();
+  return (j.content || []).map(c => c.text || '').join('');
+}
+function parseJSON(t) {
+  const m = String(t).match(/\{[\s\S]*\}/);
+  if (!m) throw new Error('응답을 읽지 못했어요');
+  return JSON.parse(m[0]);
+}
+const COACH = 'You are a warm, precise English speaking coach for a Korean adult learner. The learner\'s answer is an automatic speech-recognition transcript or typed text, so ignore punctuation and capitalization. Words that look misrecognized may be pronunciation problems; mention that gently in the hint. Write all explanations and hints in Korean. Output JSON only, no other text.';
+
+async function aiCorrect(topic, phase, text) {
+  const target = PHASES[phase].sentences;
+  const out = await claude(COACH,
+    `Topic: ${topic}\nTarget length: ${target}\nLearner's answer:\n"""${text}"""\n\nPick the 2-3 sentences with the most important grammar, tense, word-choice or likely pronunciation errors. If there are no real errors, return an empty list.\nReturn JSON: {"errors":[{"original":"the learner's sentence","hint":"Korean hint that points at the problem WITHOUT giving the corrected sentence","correction":"natural corrected sentence","why":"one-line Korean explanation"}],"praise":"one short Korean encouraging line","length_ok":true}`);
+  return parseJSON(out);
+}
+async function aiQuestions(day, phase, avoid) {
+  const kinds = phase === 0
+    ? 'Q1: a past-experience narrative question. Q2: a short situation-description question ("What would you do if...?"). Q3: a question mixing this week\'s simple patterns (daily life).'
+    : 'Q1: a past-experience narrative question (tell events in order). Q2: a sudden-situation role-play prompt (something goes wrong; the learner explains and asks for a solution). Q3: a question that mixes patterns practiced this week, ideally needing past, present and future.';
+  const out = await claude(COACH,
+    `The learner is on day ${day} (${PHASES[phase].name}). Create 3 NEW speaking questions in English that they have not practiced. ${kinds}\nAvoid these already-practiced topics: ${JSON.stringify((avoid || []).slice(-30))}.\nReturn JSON: {"questions":[{"type":"past|situation|roleplay|mixed","text":"..."}]}`, 900);
+  return parseJSON(out).questions;
+}
+async function aiWeeklyReport(items, prev, phase) {
+  const cur = items.map((x, i) => `Q${i + 1} (${x.type}): ${x.q}\nAnswer: ${x.transcript || '(empty)'}`).join('\n\n');
+  const last = prev ? prev.items.map((x, i) => `Q${i + 1}: ${x.transcript || '(empty)'}`).join('\n') : '(no previous check)';
+  const out = await claude(COACH,
+    `Weekly check, level: ${PHASES[phase].name}.\nThis week:\n${cur}\n\nLast week's answers:\n${last}\n\nFor each answer, write it out as clean text and show the errors you find with corrections.\nReturn JSON: {"items":[{"clean":"the answer as clean written text","fixes":[{"original":"...","corrected":"...","why":"Korean one-line"}]}],"changes":"Korean paragraph: what improved or changed compared with last week (say so honestly if there is nothing to compare)"}`, 2200);
+  return parseJSON(out);
+}
+
+/* ---------- TTS ---------- */
+let VOICES = [];
+function loadVoices() { try { VOICES = (speechSynthesis.getVoices() || []).filter(v => /^en/i.test(v.lang)); } catch (e) { VOICES = []; } }
+if ('speechSynthesis' in window) { loadVoices(); speechSynthesis.onvoiceschanged = loadVoices; }
+function voiceScore(v) { return (/premium/i.test(v.name) ? 4 : 0) + (/enhanced/i.test(v.name) ? 3 : 0) + (/siri/i.test(v.name) ? 2 : 0) + (v.lang === 'en-US' ? 1 : 0); }
+function pickVoice() {
+  if (S.voiceURI) { const v = VOICES.find(x => x.voiceURI === S.voiceURI); if (v) return v; }
+  return VOICES.slice().sort((a, b) => voiceScore(b) - voiceScore(a))[0];
+}
+function browserSpeak(text) {
+  if (!('speechSynthesis' in window)) { toast('이 브라우저는 음성 읽기를 지원하지 않아요'); return; }
+  const u = new SpeechSynthesisUtterance(text);
+  const v = pickVoice();
+  if (v) { u.voice = v; u.lang = v.lang; } else u.lang = 'en-US';
+  u.rate = S.rate || 0.9;
+  speechSynthesis.cancel(); speechSynthesis.speak(u);
+}
+const hashStr = s => { let h = 5381; for (let i = 0; i < s.length; i++) h = ((h << 5) + h + s.charCodeAt(i)) | 0; return String(h); };
+let ttsAudio = null;
+function playBlob(blob, rate) {
+  const url = URL.createObjectURL(blob);
+  if (ttsAudio) { try { ttsAudio.pause(); } catch (e) { /* ignore */ } }
+  ttsAudio = new Audio(url); ttsAudio.playbackRate = rate || 1;
+  return ttsAudio.play().catch(() => toast('소리를 재생하지 못했어요'));
+}
+async function openaiAudio(text) {
+  const key = 'o:' + S.openaiVoice + ':' + hashStr(text);
+  let blob = await dbGet('tts', key);
+  if (blob) return blob;
+  for (const model of ['gpt-4o-mini-tts', 'tts-1']) {
+    const r = await fetch('https://api.openai.com/v1/audio/speech', {
+      method: 'POST', headers: { Authorization: 'Bearer ' + S.openaiKey, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ model, voice: S.openaiVoice || 'alloy', input: text, response_format: 'mp3' })
+    });
+    if (r.ok) { blob = await r.blob(); dbPut('tts', key, blob); return blob; }
+  }
+  throw new Error('tts failed');
+}
+async function speak(text) {
+  if (!text) return;
+  unlockAudio();
+  try { if ('speechSynthesis' in window) speechSynthesis.cancel(); } catch (e) { /* ignore */ }
+  if (S.ttsMode === 'openai' && S.openaiKey) {
+    try { const b = await openaiAudio(text); await playBlob(b, 1); return; }
+    catch (e) { toast('클라우드 음성을 못 불러와서 기본 음성으로 읽어요'); }
+  }
+  browserSpeak(text);
+}
+
+</script>
+<script>
+'use strict';
+/* =========================================================
+   views.js — tabs: 오늘 / 주간 점검 / 기록 / 설정
+   ========================================================= */
+
+let CUR = 'today';
+function go(tab) {
+  CUR = tab || CUR;
+  document.body.classList.remove('flow');
+  try { if ('speechSynthesis' in window) speechSynthesis.cancel(); } catch (e) { /* ignore */ }
+  $$('#tabs button').forEach(b => b.classList.toggle('on', b.dataset.tab === CUR));
+  ({ today: renderToday, weekly: renderWeekly, records: renderRecords, settings: renderSettings })[CUR]();
+}
+$$('#tabs button').forEach(b => { b.onclick = () => go(b.dataset.tab); });
+
+function computeStreak() {
+  let n = 0, d = todayStr();
+  if (!S.sessions[d]) d = addDays(d, -1);
+  while (S.sessions[d]) { n++; d = addDays(d, -1); }
+  return n;
+}
+function lensText(lens) { return lens.map(x => x + '초').join(' → '); }
+
+/* ---------------- 오늘 ---------------- */
+function renderToday() {
+  const date = todayStr(), day = dayNumber(), ph = phaseOf(day), P = PHASES[ph];
+  const lens = roundLens(day, date), sess = S.sessions[date];
+  const due = S.reviews.filter(r => !r.done && r.due <= date).sort((a, b) => (a.due < b.due ? -1 : 1));
+  const wk = weekStart(date);
+  const rpCount = Object.entries(S.sessions).filter(([d, s]) => weekStart(d) === wk && s.roleplay).length;
+  const total = Object.keys(S.sessions).length;
+  const thisWeek = Object.keys(S.sessions).filter(d => weekStart(d) === wk).length;
+  const canShorten = tierIndex(day, date) > 0;
+  const shortened = (S.tooLong[date] || 0) > 0;
+
+  const v = view(`
+    <div class="eyebrow">${fmtKDate(date)}</div>
+    <h1>${day}일차</h1>
+    <div class="row"><span class="pill">${esc(P.name)}</span><span class="pill gray">${P.range}</span></div>
+
+    <div class="card">
+      <h3>오늘의 목표</h3>
+      <p>${esc(P.goal)}</p>
+      ${ph === 2 ? `<p class="small mute">이번 주 롤플레이 ${rpCount}/2회</p>` : ''}
+    </div>
+
+    ${due.map((r, i) => `
+      <div class="card warn">
+        <h3>복습 · ${r.due < date ? fmtKDate(r.from) + ' 주제' : '어제 주제'}</h3>
+        <div class="topic" style="font-size:18px">${esc(r.topic)}</div>
+        <p class="small mute" style="margin-top:6px">메모 없이 1회 말하기</p>
+        <button class="btn primary" data-review="${i}">복습 말하기</button>
+      </div>`).join('')}
+
+    <div class="card">
+      <div class="row between"><h2 style="margin:0">E. 반복 말하기</h2><span class="pill gray">약 12분</span></div>
+      <div class="kv"><span class="mute">오늘 말하기 길이</span><b>${lensText(lens)}</b></div>
+      <div class="kv"><span class="mute">목표</span><b>${P.sentences}</b></div>
+      ${shortened ? '<p class="small mute">오늘은 한 단계 짧게 조정됐어요.</p>' : ''}
+      ${sess ? `<p class="pill" style="margin-top:8px">오늘 완료 · ${esc(sess.topic)}</p>` : ''}
+      <div class="row" style="margin-top:12px">
+        <button class="btn primary grow" id="startE">${sess ? '한 번 더 하기' : '시작하기'}</button>
+        ${canShorten ? '<button class="btn" id="tooLong">너무 길어요</button>' : ''}
+        ${shortened ? '<button class="btn ghost" id="resetLen">원래대로</button>' : ''}
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="stat">
+        <div><b>${computeStreak()}</b><span>연속 일수</span></div>
+        <div><b>${thisWeek}</b><span>이번 주 횟수</span></div>
+        <div><b>${total}</b><span>누적 횟수</span></div>
+      </div>
+    </div>`);
+
+  $('#startE', v).onclick = () => { unlockAudio(); startE(); };
+  const tl = $('#tooLong', v); if (tl) tl.onclick = () => { S.tooLong[date] = (S.tooLong[date] || 0) + 1; save(); toast('오늘은 한 단계 짧게 할게요'); renderToday(); };
+  const rl = $('#resetLen', v); if (rl) rl.onclick = () => { delete S.tooLong[date]; save(); renderToday(); };
+  $$('[data-review]', v).forEach(b => { b.onclick = () => { unlockAudio(); startReview(due[+b.dataset.review]); }; });
+}
+
+/* ---------------- 주간 점검 ---------------- */
+function renderWeekly() {
+  const date = todayStr(), day = dayNumber(), ph = phaseOf(day), wk = weekStart(date);
+  const done = S.weekly.find(w => weekStart(w.date) === wk);
+  const secs = WEEKLY_SECS[ph];
+  const v = view(`
+    <div class="eyebrow">주 1회</div>
+    <h1>주간 점검</h1>
+    <div class="row"><span class="pill">${day}일차 · ${esc(PHASES[ph].name)}</span></div>
+
+    <div class="card">
+      <h3>이번 점검 방식</h3>
+      <div class="kv"><span class="mute">답변 시간</span><b>${secs}초</b></div>
+      <div class="kv"><span class="mute">계획 시간</span><b>30초</b></div>
+      <div class="kv"><span class="mute">질문</span><b>새 질문 3개</b></div>
+      <p class="small mute" style="margin-top:8px">과거 경험 서사 1개, ${ph === 0 ? '짧은 상황 설명 1개' : '돌발상황 롤플레이 1개'}, 이번 주 패턴을 섞은 질문 1개로 구성돼요. 끝나면 말한 내용을 글로 옮겨 오류를 고치고, 지난주와 비교해 줘요.</p>
+      ${done ? `<p class="pill">이번 주 점검 완료 · ${fmtKDate(done.date)}</p>` : ''}
+      <button class="btn primary big" id="startW" style="margin-top:10px">${done ? '다시 점검하기' : '점검 시작'}</button>
+    </div>
+    ${S.weekly.length ? `<div class="card"><h3>지난 점검</h3><ul class="list">${S.weekly.slice().reverse().slice(0, 6).map(w =>
+      `<li><b>${fmtKDate(w.date)}</b> <span class="mute small">· ${w.day}일차</span><div class="small mute">${w.items.map(i => wordCount(i.transcript) + '단어').join(' / ')}</div></li>`).join('')}</ul></div>` : ''}`);
+  $('#startW', v).onclick = () => { unlockAudio(); startWeekly(); };
+}
+
+/* ---------------- 기록 ---------------- */
+function renderRecords() {
+  const dates = Object.keys(S.sessions).sort().reverse();
+  const v = view(`
+    <div class="eyebrow">지금까지</div>
+    <h1>기록</h1>
+    ${dates.length ? `<div class="card"><h3>반복 말하기</h3><ul class="list">
+      ${dates.map(d => {
+        const s = S.sessions[d];
+        return `<li>
+          <div class="row between"><b>${fmtKDate(d)}</b><span class="pill gray">${s.day}일차</span></div>
+          <div>${esc(s.topic)}</div>
+          <details><summary class="small">내용 보기</summary>
+            ${(s.rounds || []).map((t, i) => `<div class="small mute" style="margin-top:6px">${i + 1}회차</div><div class="quote small">${esc(t) || '<span class="mute">(내용 없음)</span>'}</div>`).join('')}
+            ${s.fixes && s.fixes.length ? `<div class="small mute" style="margin-top:6px">정정</div>${s.fixes.map(f => `<div class="small">${esc(f.original)} → <b>${esc(f.correction)}</b></div>`).join('')}` : ''}
+            <button class="btn" data-play="${d}|r3" style="margin-top:8px">3회차 녹음 듣기</button>
+          </details></li>`;
+      }).join('')}</ul></div>` : '<div class="card"><p class="mute">아직 기록이 없어요. 오늘 탭에서 첫 반복 말하기를 시작해 보세요.</p></div>'}
+    ${S.weekly.length ? `<div class="card"><h3>주간 점검</h3><ul class="list">
+      ${S.weekly.slice().reverse().map((w, wi) => `<li>
+        <div class="row between"><b>${fmtKDate(w.date)}</b><span class="pill gray">${w.day}일차</span></div>
+        <details><summary class="small">결과 보기</summary>
+          ${w.items.map((it, i) => `<div class="small mute" style="margin-top:8px">Q${i + 1}. ${esc(it.q)}</div>
+            <div class="quote small">${esc(it.transcript) || '<span class="mute">(내용 없음)</span>'}</div>
+            <button class="btn" data-play="${w.date}|w${i}">녹음 듣기</button>`).join('')}
+          ${w.report && w.report.changes ? `<div class="card soft" style="margin-top:10px"><h3>지난주와 비교</h3><p class="small">${esc(w.report.changes)}</p></div>` : ''}
+        </details></li>`).join('')}</ul></div>` : ''}`);
+  $$('[data-play]', v).forEach(b => {
+    b.onclick = async () => {
+      const blob = await dbGet('rec', b.dataset.play);
+      if (blob) playBlob(blob, 1); else toast('저장된 녹음이 없어요 (이 기기/브라우저에만 저장돼요)');
+    };
+  });
+}
+
+/* ---------------- 설정 ---------------- */
+function renderSettings() {
+  const v = view(`
+    <div class="eyebrow">이 기기에 저장돼요</div>
+    <h1>설정</h1>
+
+    <div class="card">
+      <h3>일차</h3>
+      <label for="start">시작일 (1일차)</label>
+      <input class="field" type="date" id="start" value="${esc(S.startDate)}">
+      <div class="row between" style="margin-top:12px">
+        <span>오늘은 <b>${dayNumber()}일차</b></span>
+        <span class="row"><button class="btn icon" id="dm">−1</button><button class="btn icon" id="dp">+1</button></span>
+      </div>
+      <p class="small mute">날짜가 지나면 일차가 자동으로 올라가요. 쉬었다 돌아오면 −1/+1로 맞춰요.</p>
+    </div>
+
+    <div class="card">
+      <h3>말하기 방식</h3>
+      <div class="switch"><span>녹음하기</span><input type="checkbox" id="useRec" ${S.useRec ? 'checked' : ''}></div>
+      <div class="switch"><span>음성 인식 (말한 내용을 글자로)</span><input type="checkbox" id="useRecog" ${S.useRecog ? 'checked' : ''}></div>
+      <p class="small mute">아이패드에서 둘을 같이 켰을 때 한쪽이 안 되면, 하나만 켜고 나머지는 직접 입력해도 돼요.</p>
+    </div>
+
+    <div class="card">
+      <h3>문장 읽어주는 음성</h3>
+      <label for="ttsMode">방식</label>
+      <select class="field" id="ttsMode">
+        <option value="browser" ${S.ttsMode === 'browser' ? 'selected' : ''}>기기 기본 음성</option>
+        <option value="openai" ${S.ttsMode === 'openai' ? 'selected' : ''}>클라우드 음성 (OpenAI, 더 자연스러움)</option>
+      </select>
+      <div id="browserVoice">
+        <label for="voice">기기 음성</label>
+        <select class="field" id="voice"></select>
+        <p class="small mute">목록에 Premium/Enhanced가 붙은 음성이 더 자연스러워요. 아이패드는 설정 → 손쉬운 사용 → 말하기 콘텐츠 → 음성에서 내려받아요.</p>
+      </div>
+      <div id="cloudVoice">
+        <label for="okey">OpenAI API 키</label>
+        <input class="field" type="password" id="okey" autocomplete="off" value="${esc(S.openaiKey)}" placeholder="sk-...">
+        <label for="ovoice">음성</label>
+        <select class="field" id="ovoice">${['alloy', 'ash', 'coral', 'echo', 'fable', 'nova', 'onyx', 'sage', 'shimmer'].map(x => `<option ${S.openaiVoice === x ? 'selected' : ''}>${x}</option>`).join('')}</select>
+        <p class="small mute">한 번 만든 문장은 기기에 저장해 두고 다시 쓰니까 비용이 거의 안 들어요.</p>
+      </div>
+      <label for="rate">속도 ${S.rate.toFixed(2)}</label>
+      <input type="range" id="rate" min="0.6" max="1.2" step="0.05" value="${S.rate}" style="width:100%">
+      <button class="btn" id="testTts" style="margin-top:8px">들어보기</button>
+    </div>
+
+    <div class="card">
+      <h3>AI 정정 (선택)</h3>
+      <label for="akey">Claude API 키</label>
+      <input class="field" type="password" id="akey" autocomplete="off" value="${esc(S.apiKey)}" placeholder="sk-ant-...">
+      <label for="model">모델</label>
+      <input class="field" id="model" value="${esc(S.model)}">
+      <p class="small mute">키를 넣으면 1회차 후 틀린 문장 2~3개를 힌트 → 정답 순서로 알려주고, 주간 점검 리포트도 만들어 줘요. 키는 이 기기에만 저장되고 요청은 Anthropic으로만 가요. 없으면 직접 고치는 방식으로 진행돼요.</p>
+    </div>
+
+    <div class="card">
+      <h3>홈 화면에 앱처럼 추가</h3>
+      <p class="small">사파리에서 이 페이지를 열고 공유 버튼 → "홈 화면에 추가". 홈 화면 앱에서 마이크가 안 되면 사파리에서 바로 열어 쓰세요.</p>
+    </div>
+
+    <div class="card">
+      <h3>데이터</h3>
+      <div class="row">
+        <button class="btn" id="exp">백업 내보내기</button>
+        <button class="btn" id="imp">백업 불러오기</button>
+        <input type="file" id="impf" accept="application/json" hidden>
+      </div>
+      <p class="small mute">텍스트 기록과 설정이 포함돼요. 녹음 파일은 이 기기에만 남아요.</p>
+      <button class="btn danger" id="reset" style="margin-top:8px">모든 데이터 지우기</button>
+    </div>`);
+
+  const sync = () => {
+    $('#browserVoice', v).style.display = S.ttsMode === 'browser' ? '' : 'none';
+    $('#cloudVoice', v).style.display = S.ttsMode === 'openai' ? '' : 'none';
+  };
+  const fillVoices = () => {
+    const sel = $('#voice', v); if (!sel) return;
+    const list = VOICES.slice().sort((a, b) => voiceScore(b) - voiceScore(a));
+    sel.innerHTML = `<option value="">자동 (가장 좋은 음성)</option>` +
+      list.map(x => `<option value="${esc(x.voiceURI)}" ${S.voiceURI === x.voiceURI ? 'selected' : ''}>${esc(x.name)} · ${esc(x.lang)}</option>`).join('');
+  };
+  fillVoices(); sync();
+  if ('speechSynthesis' in window) { speechSynthesis.onvoiceschanged = () => { loadVoices(); fillVoices(); }; }
+
+  $('#start', v).onchange = e => { if (e.target.value) { S.startDate = e.target.value; save(); renderSettings(); } };
+  $('#dm', v).onclick = () => { S.dayAdjust--; save(); renderSettings(); };
+  $('#dp', v).onclick = () => { S.dayAdjust++; save(); renderSettings(); };
+  $('#useRec', v).onchange = e => { S.useRec = e.target.checked; save(); };
+  $('#useRecog', v).onchange = e => { S.useRecog = e.target.checked; save(); };
+  $('#ttsMode', v).onchange = e => { S.ttsMode = e.target.value; save(); sync(); };
+  $('#voice', v).onchange = e => { S.voiceURI = e.target.value; save(); };
+  $('#okey', v).onchange = e => { S.openaiKey = e.target.value.trim(); save(); };
+  $('#ovoice', v).onchange = e => { S.openaiVoice = e.target.value; save(); };
+  $('#rate', v).oninput = e => { S.rate = +e.target.value; save(); $('label[for=rate]', v).textContent = '속도 ' + S.rate.toFixed(2); };
+  $('#akey', v).onchange = e => { S.apiKey = e.target.value.trim(); save(); toast(S.apiKey ? 'AI 정정을 켰어요' : 'AI 정정을 껐어요'); };
+  $('#model', v).onchange = e => { S.model = e.target.value.trim() || DEFAULTS.model; save(); };
+  $('#testTts', v).onclick = () => speak('Hello! Today we are going to practice speaking about your daily life.');
+  $('#exp', v).onclick = () => {
+    try {
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(new Blob([JSON.stringify(S, null, 1)], { type: 'application/json' }));
+      a.download = `speaking-backup-${todayStr()}.json`; document.body.appendChild(a); a.click(); a.remove();
+    } catch (e) { toast('내보내기를 지원하지 않는 환경이에요'); }
+  };
+  $('#imp', v).onclick = () => $('#impf', v).click();
+  $('#impf', v).onchange = e => {
+    const f = e.target.files[0]; if (!f) return;
+    const r = new FileReader();
+    r.onload = () => { try { S = Object.assign(JSON.parse(JSON.stringify(DEFAULTS)), JSON.parse(r.result)); save(); toast('불러왔어요'); renderSettings(); } catch (x) { toast('파일을 읽지 못했어요'); } };
+    r.readAsText(f);
+  };
+  $('#reset', v).onclick = () => {
+    if (!confirm('기록과 설정을 모두 지울까요? 되돌릴 수 없어요.')) return;
+    S = JSON.parse(JSON.stringify(DEFAULTS)); S.startDate = todayStr(); save(); toast('지웠어요'); renderSettings();
+  };
+}
+
+</script>
+<script>
+'use strict';
+/* =========================================================
+   flows.js — E 반복 말하기, 복습, 주간 점검
+   ========================================================= */
+
+let F = null; /* current flow state */
+const EXIT = '<div class="row" style="margin-top:14px"><button class="btn ghost" id="exit">그만두기</button></div>';
+function bindExit(v) {
+  const b = $('#exit', v);
+  if (b) b.onclick = () => { if (confirm('진행 중인 내용은 저장되지 않아요. 나갈까요?')) { F = null; go('today'); } };
+}
+function progress(labels, idx) {
+  return `<div class="progress">${labels.map((_, i) => `<i class="${i < idx ? 'done' : i === idx ? 'now' : ''}"></i>`).join('')}</div><div class="eyebrow">${esc(labels[idx])}</div>`;
+}
+const sayBtn = (id, label) => `<button class="btn" id="${id}">🔊 ${label || '듣기'}</button>`;
+
+/* ---------- speaking component: record + recognize + edit ---------- */
+function mountSpeak(el, o) {
+  let cap = null, timer = null;
+  onLeave(() => { if (timer) timer.stop(); if (cap && cap.running) cap.stop(); });
+
+  function idle() {
+    el.innerHTML = `
+      <div class="timerbox"><div class="big-timer">${fmtT(o.len)}</div><div class="mute small">${o.len}초 동안 말해요</div></div>
+      <button class="btn primary big" id="sgo">● 말하기 시작</button>`;
+    $('#sgo', el).onclick = begin;
+  }
+  async function begin() {
+    unlockAudio();
+    el.innerHTML = `<div class="timerbox"><div class="big-timer">${fmtT(o.len)}</div><div class="mute small">마이크 준비 중…</div></div>`;
+    cap = new Capture();
+    const res = await cap.start(t => {
+      const x = $('#slive', el); if (x) { x.textContent = t || '…'; x.classList.toggle('empty', !t); }
+    });
+    drawRec(res);
+    timer = runTimer(o.len, left => { const t = $('#stm', el); if (t) t.textContent = fmtT(left); }, () => finish(true));
+  }
+  function drawRec(res) {
+    const note = cap.msgs.length ? `<p class="err small">${esc(cap.msgs.join(' '))}</p>` : '';
+    el.innerHTML = `
+      <div class="timerbox"><div class="big-timer rec" id="stm">${fmtT(o.len)}</div>
+        <div class="mute small"><span class="dot"></span>${res.mic ? '녹음 중' : '타이머만 동작 중'}</div></div>
+      <div class="live empty" id="slive">${S.useRecog ? '말하면 여기에 글자로 나와요' : '말한 뒤에 직접 입력할 수 있어요'}</div>${note}
+      <button class="btn big" id="sstop">그만 말하기</button>`;
+    $('#sstop', el).onclick = () => finish(false);
+  }
+  async function finish(auto) {
+    if (timer) { timer.stop(); timer = null; }
+    if (!cap) return;
+    beep(auto ? 2 : 1);
+    el.innerHTML = '<p class="mute">정리하는 중…</p>';
+    const r = await cap.stop();
+    result(r, cap.msgs);
+  }
+  function result(r, msgs) {
+    const url = r.blob ? URL.createObjectURL(r.blob) : null;
+    el.innerHTML = `
+      <h3>내가 말한 내용</h3>
+      <textarea class="field" id="stxt" placeholder="인식된 내용이 없어요. 직접 입력해도 돼요.">${esc(r.text)}</textarea>
+      <p class="small mute">틀리게 인식된 부분이 있으면 고쳐 주세요.</p>
+      ${msgs.length ? `<p class="err small">${esc(msgs.join(' '))}</p>` : ''}
+      ${url ? `<audio controls src="${url}"></audio>` : ''}
+      <div class="row" style="margin-top:12px">
+        <button class="btn" id="sredo">다시 하기</button>
+        <button class="btn primary grow" id="sok">${esc(o.okLabel || '다음')}</button>
+      </div>`;
+    $('#sredo', el).onclick = idle;
+    $('#sok', el).onclick = async () => {
+      const text = $('#stxt', el).value.trim();
+      if (r.blob && o.save) await dbPut('rec', `${o.date}|${o.tag}`, r.blob);
+      o.onDone({ text, hasRec: !!r.blob });
+    };
+  }
+  idle();
+}
+
+/* ---------- read-aloud practice block ---------- */
+function mountRead(el, lines, seconds, nextLabel, onNext) {
+  let timer = null;
+  onLeave(() => { if (timer) timer.stop(); });
+  el.innerHTML = `
+    <div class="card">
+      <h3>소리 내어 읽기 (${fmtT(seconds)})</h3>
+      <ul class="list">${lines.map((l, i) => `<li><div class="fixed">${esc(l)}</div>${sayBtn('say' + i, '듣기')}</li>`).join('')}</ul>
+      <div class="timerbox"><div class="big-timer" id="rt">${fmtT(seconds)}</div></div>
+      <button class="btn" id="rstart">읽기 시작</button>
+    </div>
+    <button class="btn primary big" id="rnext">${esc(nextLabel)}</button>`;
+  lines.forEach((l, i) => { $('#say' + i, el).onclick = () => speak(l); });
+  $('#rstart', el).onclick = () => {
+    unlockAudio();
+    if (timer) timer.stop();
+    timer = runTimer(seconds, left => { const t = $('#rt', el); if (t) t.textContent = fmtT(left); }, () => { beep(2); toast('시간이 끝났어요'); });
+  };
+  $('#rnext', el).onclick = onNext;
+}
+
+/* =========================================================
+   E. 반복 말하기
+   ========================================================= */
+const E_LABELS = ['주제 정하기', '키워드 메모 (1분)', '1회차', '정정', '2회차', '3회차 · 녹음', '새 주제로 1회'];
+
+function startE() {
+  const date = todayStr(), day = dayNumber();
+  F = { kind: 'E', date, day, phase: phaseOf(day), lens: roundLens(day, date), step: 0, topic: '', roleplay: false, memo: '', rounds: [], fixes: null, manual: '', newTopic: '', newText: '' };
+  renderE();
+}
+function renderE() {
+  document.body.classList.add('flow');
+  [eTopic, eMemo, eRound, eFix, eRound, eRound, eNew][F.step]();
+}
+
+function eTopic() {
+  const v = view(`
+    ${progress(E_LABELS, 0)}
+    <h1>오늘의 주제</h1>
+    <div class="card">
+      <label for="tp">주제 (영어로 정하면 좋아요)</label>
+      <input class="field" id="tp" value="${esc(F.topic)}" placeholder="예: My favorite food">
+      <div class="row" style="margin-top:12px">
+        <button class="btn" id="sug">추천 주제</button>
+        ${F.phase === 2 ? '<button class="btn" id="rp">롤플레이 상황</button>' : ''}
+        ${sayBtn('say')}
+      </div>
+      <p class="small mute" id="rpnote" style="margin:10px 0 0">${F.roleplay ? '돌발상황 롤플레이예요. 상황을 설명하고 해결을 요청해 보세요.' : ''}</p>
+    </div>
+    <button class="btn primary big" id="next">다음 · 키워드 메모</button>
+    ${EXIT}`);
+  bindExit(v);
+  const tp = $('#tp', v);
+  $('#sug', v).onclick = () => { F.roleplay = false; tp.value = pickTopic(F.phase); $('#rpnote', v).textContent = ''; };
+  const rp = $('#rp', v); if (rp) rp.onclick = () => { F.roleplay = true; tp.value = pickFrom(ROLEPLAYS); $('#rpnote', v).textContent = '돌발상황 롤플레이예요. 상황을 설명하고 해결을 요청해 보세요.'; };
+  $('#say', v).onclick = () => speak(tp.value);
+  $('#next', v).onclick = () => {
+    if (!tp.value.trim()) return toast('주제를 정해 주세요');
+    F.topic = tp.value.trim(); F.step = 1; renderE();
+  };
+}
+
+function eMemo() {
+  const v = view(`
+    ${progress(E_LABELS, 1)}
+    <h1>키워드만 적어요</h1>
+    <div class="card"><div class="topic">${esc(F.topic)}</div></div>
+    <div class="card">
+      <div class="timerbox" style="padding-top:0"><div class="big-timer" id="tm">1:00</div><div class="mute small">문장은 쓰지 않아요. 단어만!</div></div>
+      <textarea class="field" id="memo" placeholder="keyword, keyword, keyword">${esc(F.memo)}</textarea>
+    </div>
+    <button class="btn primary big" id="next">1회차 말하기 (${F.lens[0]}초)</button>
+    ${EXIT}`);
+  bindExit(v);
+  const t = runTimer(60, left => { const x = $('#tm', v); if (x) x.textContent = fmtT(left); }, () => { beep(2); toast('1분이 끝났어요'); });
+  onLeave(() => t.stop());
+  $('#next', v).onclick = () => { F.memo = $('#memo', v).value.trim(); F.step = 2; renderE(); };
+}
+
+function eRound() {
+  const i = F.step === 2 ? 0 : F.step === 4 ? 1 : 2;
+  const v = view(`
+    ${progress(E_LABELS, F.step)}
+    <h1>${i + 1}회차 · ${F.lens[i]}초</h1>
+    <div class="card">
+      <div class="topic">${esc(F.topic)}</div>
+      ${F.memo ? `<p class="small mute" style="margin:8px 0 0">메모: ${esc(F.memo)}</p>` : ''}
+      <p class="small mute" style="margin:8px 0 0">${i === 2 ? '이번 회차는 녹음해서 저장해요. ' : ''}목표 ${PHASES[F.phase].sentences}${i > 0 ? ' · 같은 내용을 더 짧고 매끄럽게' : ''}</p>
+    </div>
+    <div class="card" id="sp"></div>
+    ${EXIT}`);
+  bindExit(v);
+  mountSpeak($('#sp', v), {
+    len: F.lens[i], date: F.date, tag: 'r' + (i + 1), save: i === 2,
+    okLabel: i === 0 ? '다음 · 정정' : i === 1 ? '3회차로' : '다음 · 새 주제',
+    onDone: r => { F.rounds[i] = r.text; F.step = i === 0 ? 3 : i === 1 ? 5 : 6; renderE(); }
+  });
+}
+
+async function eFix() {
+  const text = F.rounds[0] || '';
+  const v = view(`
+    ${progress(E_LABELS, 3)}
+    <h1>틀린 문장 고치기</h1>
+    <div id="fx"><div class="card"><p class="mute">확인하는 중…</p></div></div>
+    ${EXIT}`);
+  bindExit(v);
+  const fx = $('#fx', v);
+  const toR2 = () => { F.step = 4; renderE(); };
+  const alive = () => document.body.contains(fx);
+
+  if (!text.trim()) {
+    fx.innerHTML = `<div class="card"><p>1회차에서 인식된 내용이 없어서 정정은 건너뛸게요.</p></div><button class="btn primary big" id="go2">2회차 말하기</button>`;
+    $('#go2', fx).onclick = toR2; return;
+  }
+  if (!S.apiKey) {
+    fx.innerHTML = `
+      <div class="card"><h3>내가 말한 내용</h3><div class="quote">${esc(text)}</div></div>
+      <div class="card"><label for="mf">틀린 문장 2~3개를 골라 고쳐 써 보세요</label>
+        <textarea class="field" id="mf" placeholder="고친 문장을 적어요">${esc(F.manual)}</textarea>
+        <p class="small mute">설정에 Claude API 키를 넣으면 AI가 틀린 문장을 골라 힌트 → 정답 순서로 알려줘요.</p></div>
+      <div id="rd"></div>`;
+    mountRead($('#rd', fx), ['내가 고친 문장을 소리 내어 읽어요'], 60, '2회차 말하기', () => { F.manual = $('#mf', fx).value.trim(); F.fixes = F.fixes || { errors: [] }; toR2(); });
+    $$('#rd .list li button', fx).forEach(b => { b.onclick = () => speak($('#mf', fx).value || text); });
+    return;
+  }
+  try {
+    if (!F.fixes) F.fixes = await aiCorrect(F.topic, F.phase, text);
+  } catch (e) {
+    if (!alive()) return;
+    fx.innerHTML = `<div class="card"><p class="err">AI 정정을 불러오지 못했어요.</p><p class="small mute">${esc(e.message)}</p>
+      <div class="row"><button class="btn" id="retry">다시 시도</button><button class="btn" id="skip">건너뛰기</button></div></div>`;
+    $('#retry', fx).onclick = eFix; $('#skip', fx).onclick = toR2; return;
+  }
+  if (!alive()) return;
+  const errs = (F.fixes.errors || []).slice(0, 3);
+  if (!errs.length) {
+    fx.innerHTML = `<div class="card soft"><h3>잘했어요</h3><p>${esc(F.fixes.praise || '큰 오류가 보이지 않아요.')}</p></div><button class="btn primary big" id="go2">2회차 말하기</button>`;
+    $('#go2', fx).onclick = toR2; return;
+  }
+  const readStage = () => {
+    fx.innerHTML = `<div class="card soft"><p style="margin:0">${esc(F.fixes.praise || '좋아요! 고친 문장을 1분 동안 읽어 볼게요.')}</p></div><div id="rd"></div>`;
+    mountRead($('#rd', fx), errs.map(e => e.correction), 60, '2회차 말하기', toR2);
+  };
+  const stepErr = i => {
+    const e = errs[i];
+    fx.innerHTML = `
+      <div class="card">
+        <div class="eyebrow">${i + 1} / ${errs.length}</div>
+        <h3>내가 말한 문장</h3><div class="quote">${esc(e.original)}</div>
+        <div class="card warn" style="margin:12px 0"><b>힌트</b><br>${esc(e.hint)}</div>
+        <div id="ans"></div>
+        <button class="btn" id="show">정답 보기</button>
+      </div>`;
+    $('#show', fx).onclick = () => {
+      $('#ans', fx).innerHTML = `<div class="fixed">${esc(e.correction)}</div><p class="small mute">${esc(e.why || '')}</p>${sayBtn('sp1')}`;
+      $('#sp1', fx).onclick = () => speak(e.correction);
+      const b = $('#show', fx); b.id = 'nx'; b.classList.add('primary');
+      b.textContent = i + 1 < errs.length ? '다음 문장' : '1분 읽기로';
+      b.onclick = () => (i + 1 < errs.length ? stepErr(i + 1) : readStage());
+    };
+  };
+  stepErr(0);
+}
+
+function eNew() {
+  if (!F.newTopic) F.newTopic = pickTopic(F.phase, [F.topic]);
+  const v = view(`
+    ${progress(E_LABELS, 6)}
+    <h1>새로운 주제로 1회</h1>
+    <p class="mute">같은 패턴으로, 처음 보는 주제를 ${F.lens[0]}초 말해요.</p>
+    <div class="card">
+      <label for="nt">주제</label>
+      <input class="field" id="nt" value="${esc(F.newTopic)}">
+      <div class="row" style="margin-top:12px"><button class="btn" id="nsug">다른 주제</button>${sayBtn('nsay')}</div>
+    </div>
+    <div class="card" id="sp"></div>
+    ${EXIT}`);
+  bindExit(v);
+  const nt = $('#nt', v);
+  $('#nsug', v).onclick = () => { nt.value = pickTopic(F.phase, [F.topic, nt.value]); };
+  $('#nsay', v).onclick = () => speak(nt.value);
+  mountSpeak($('#sp', v), {
+    len: F.lens[0], date: F.date, tag: 'new', save: false, okLabel: '마치기',
+    onDone: r => { F.newTopic = nt.value.trim() || F.newTopic; F.newText = r.text; finishE(); }
+  });
+}
+
+function finishE() {
+  S.sessions[F.date] = {
+    day: F.day, phase: F.phase, topic: F.topic, newTopic: F.newTopic, memo: F.memo, rounds: F.rounds, newText: F.newText,
+    lens: F.lens, fixes: (F.fixes && F.fixes.errors) || [], manualFix: F.manual, roleplay: F.roleplay, doneAt: Date.now()
+  };
+  S.reviews = S.reviews.filter(r => r.from !== F.date);
+  S.reviews.push({ topic: F.topic, from: F.date, due: addDays(F.date, 1), done: false });
+  S.usedTopics = (S.usedTopics || []).concat([F.topic, F.newTopic]).slice(-300);
+  save();
+  const w = F.rounds.map(wordCount);
+  const v = view(`
+    <div class="eyebrow">${fmtKDate(F.date)}</div>
+    <h1>오늘 끝! 🎉</h1>
+    <div class="card soft">
+      <h3>${esc(F.topic)}</h3>
+      <div class="kv"><span>1 → 2 → 3회차 단어 수</span><b>${w.join(' → ')}</b></div>
+      <p class="small" style="margin:6px 0 0">내일 이 주제를 메모 없이 한 번 더 말해 볼 거예요. 복습 카드로 저장했어요.</p>
+    </div>
+    <button class="btn primary big" id="home">홈으로</button>`);
+  $('#home', v).onclick = () => { F = null; go('today'); };
+}
+
+/* =========================================================
+   복습 (다음 날 메모 없이 1회)
+   ========================================================= */
+function startReview(rv) {
+  const date = todayStr(), day = dayNumber();
+  F = { kind: 'R', rv, date, day };
+  document.body.classList.add('flow');
+  const len = roundLens(day, date)[0];
+  const v = view(`
+    <div class="eyebrow">복습</div>
+    <h1>메모 없이 1회 · ${len}초</h1>
+    <div class="card"><div class="topic">${esc(rv.topic)}</div><p class="small mute" style="margin:8px 0 0">${fmtKDate(rv.from)}에 연습한 주제예요. 키워드 메모 없이 말해 보세요.</p></div>
+    <div class="card" id="sp"></div>
+    ${EXIT}`);
+  bindExit(v);
+  mountSpeak($('#sp', v), {
+    len, date, tag: 'rv', save: true, okLabel: '마치기',
+    onDone: r => {
+      rv.done = true; rv.transcript = r.text; rv.doneDate = date; save();
+      reviewDone(rv, r.text);
+    }
+  });
+}
+async function reviewDone(rv, text) {
+  const v = view(`
+    <div class="eyebrow">복습 완료</div>
+    <h1>잘했어요 👏</h1>
+    <div class="card"><h3>${esc(rv.topic)}</h3><div class="quote">${esc(text) || '<span class="mute">(내용 없음)</span>'}</div></div>
+    <div id="fb"></div>
+    <div class="row">
+      ${S.apiKey && text ? '<button class="btn" id="ai">AI 피드백 받기</button>' : ''}
+      <button class="btn primary grow" id="home">홈으로</button>
+    </div>`);
+  $('#home', v).onclick = () => { F = null; go('today'); };
+  const ai = $('#ai', v);
+  if (ai) ai.onclick = async () => {
+    ai.disabled = true; ai.textContent = '확인하는 중…';
+    try {
+      const r = await aiCorrect(rv.topic, phaseOf(dayNumber()), text);
+      const fb = $('#fb', v); if (!fb) return;
+      const errs = r.errors || [];
+      fb.innerHTML = `<div class="card">${errs.length ? errs.map(e => `<div class="quote">${esc(e.original)}</div><div class="fixed">${esc(e.correction)}</div><p class="small mute">${esc(e.why || '')}</p>`).join('') : `<p>${esc(r.praise || '큰 오류가 보이지 않아요.')}</p>`}</div>`;
+      ai.remove();
+    } catch (e) { ai.disabled = false; ai.textContent = 'AI 피드백 받기'; toast('AI 피드백을 불러오지 못했어요'); }
+  };
+}
+
+/* =========================================================
+   주간 점검
+   ========================================================= */
+const W_LABELS = ['질문 1', '질문 2', '질문 3', '결과'];
+
+async function startWeekly() {
+  const date = todayStr(), day = dayNumber(), phase = phaseOf(day);
+  const tok = Date.now();
+  F = { kind: 'W', tok, date, day, phase, secs: WEEKLY_SECS[phase], qs: null, i: 0, items: [] };
+  document.body.classList.add('flow');
+  view(`<div class="eyebrow">주간 점검</div><h1>질문 준비 중…</h1><div class="card"><p class="mute">이번 주 새 질문 3개를 고르고 있어요.</p></div>`);
+  let qs = null;
+  if (S.apiKey) { try { qs = await aiQuestions(day, phase, S.usedTopics); } catch (e) { toast('AI 질문 생성에 실패해서 기본 질문으로 진행해요'); } }
+  if (!F || F.tok !== tok) return;
+  if (!Array.isArray(qs) || qs.length < 3 || !qs.every(q => q && q.text)) {
+    qs = [
+      { type: 'past', text: pickFrom(PAST_QS) },
+      phase === 0 ? { type: 'situation', text: pickFrom(SITUATIONS) } : { type: 'roleplay', text: pickFrom(ROLEPLAYS) },
+      { type: 'mixed', text: 'Talk about this topic: ' + pickFrom(TOPICS[phase]) }
+    ];
+  }
+  F.qs = qs.slice(0, 3);
+  wPlan();
+}
+const Q_TYPE = { past: '과거 경험', situation: '상황 설명', roleplay: '돌발상황 롤플레이', mixed: '패턴 섞기' };
+
+function wPlan() {
+  const q = F.qs[F.i];
+  const v = view(`
+    ${progress(W_LABELS, F.i)}
+    <h1>생각할 시간 30초</h1>
+    <div class="card"><span class="pill">${Q_TYPE[q.type] || '질문'}</span>
+      <div class="topic" style="margin-top:10px">${esc(q.text)}</div>
+      <div class="row" style="margin-top:12px">${sayBtn('say', '질문 듣기')}</div></div>
+    <div class="card"><div class="timerbox" style="padding:0"><div class="big-timer" id="tm">0:30</div><div class="mute small">키워드만 머릿속으로 정리해요</div></div></div>
+    <button class="btn primary big" id="go">바로 답하기 (${F.secs}초)</button>
+    ${EXIT}`);
+  bindExit(v);
+  $('#say', v).onclick = () => speak(q.text);
+  const t = runTimer(30, left => { const x = $('#tm', v); if (x) x.textContent = fmtT(left); }, () => { beep(2); wAnswer(); });
+  onLeave(() => t.stop());
+  $('#go', v).onclick = () => wAnswer();
+}
+function wAnswer() {
+  const i = F.i, q = F.qs[i];
+  const v = view(`
+    ${progress(W_LABELS, i)}
+    <h1>답변 · ${F.secs}초</h1>
+    <div class="card"><span class="pill">${Q_TYPE[q.type] || '질문'}</span><div class="topic" style="margin-top:10px">${esc(q.text)}</div></div>
+    <div class="card" id="sp"></div>
+    ${EXIT}`);
+  bindExit(v);
+  mountSpeak($('#sp', v), {
+    len: F.secs, date: F.date, tag: 'w' + i, save: true, okLabel: i < 2 ? '다음 질문' : '결과 보기',
+    onDone: r => {
+      F.items[i] = { type: q.type, q: q.text, transcript: r.text, secs: F.secs };
+      if (i < 2) { F.i = i + 1; wPlan(); } else wReport();
+    }
+  });
+}
+
+async function wReport() {
+  const tok = F.tok;
+  const prev = S.weekly.filter(w => weekStart(w.date) !== weekStart(F.date)).slice(-1)[0] || null;
+  const words = F.items.map(x => wordCount(x.transcript));
+  const sents = F.items.map(x => sentCount(x.transcript));
+  const sum = a => a.reduce((s, x) => s + x, 0);
+  const prevWords = prev ? prev.items.map(x => wordCount(x.transcript)) : null;
+
+  const v = view(`
+    ${progress(W_LABELS, 3)}
+    <h1>점검 결과</h1>
+    <div class="card">
+      <h3>이번 주 말한 양</h3>
+      ${F.items.map((it, i) => `<div class="kv"><span class="mute">Q${i + 1}</span><b>${words[i]}단어 · ${sents[i]}문장${prevWords ? ` <span class="mute small">(지난주 ${prevWords[i]}단어)</span>` : ''}</b></div>`).join('')}
+      <div class="kv"><span class="mute">합계</span><b>${sum(words)}단어${prevWords ? ` <span class="mute small">(지난주 ${sum(prevWords)})</span>` : ''}</b></div>
+    </div>
+    <div id="rep"><div class="card"><p class="mute">${S.apiKey ? 'AI가 받아쓰기 정리와 오류 수정을 하고 있어요…' : ''}</p></div></div>
+    <button class="btn primary big" id="home">저장하고 마치기</button>`);
+  $('#home', v).onclick = () => { finishW(null); };
+
+  let report = null;
+  const rep = $('#rep', v);
+  const renderRep = rp => {
+    rep.innerHTML = F.items.map((it, i) => {
+      const r = rp && rp.items && rp.items[i];
+      return `<div class="card"><span class="pill gray">Q${i + 1}</span> <span class="small mute">${esc(it.q)}</span>
+        <h3 style="margin-top:10px">받아쓰기</h3>
+        <div class="quote small">${esc((r && r.clean) || it.transcript) || '<span class="mute">(내용 없음)</span>'}</div>
+        ${r && r.fixes && r.fixes.length ? `<h3 style="margin-top:10px">고친 부분</h3>${r.fixes.map(f => `<div class="small mute">${esc(f.original)}</div><div class="fixed small">${esc(f.corrected)}</div><div class="small mute" style="margin-bottom:6px">${esc(f.why || '')}</div>`).join('')}` : ''}
+      </div>`;
+    }).join('') + (rp && rp.changes ? `<div class="card soft"><h3>지난주와 달라진 점</h3><p class="small" style="margin:0">${esc(rp.changes)}</p></div>` : (prev ? '' : `<div class="card soft"><p class="small" style="margin:0">첫 점검이라 비교할 지난주 기록이 없어요. 다음 주부터 달라진 점을 알려줄게요.</p></div>`));
+  };
+  if (S.apiKey) {
+    try { report = await aiWeeklyReport(F.items, prev, F.phase); }
+    catch (e) { toast('AI 리포트를 불러오지 못했어요'); }
+  }
+  if (!F || F.tok !== tok || !document.body.contains(rep)) return;
+  F.report = report; renderRep(report);
+  if (!S.apiKey) rep.insertAdjacentHTML('beforeend', '<div class="card"><p class="small mute" style="margin:0">설정에 Claude API 키를 넣으면 오류 수정과 지난주 비교 코멘트가 함께 나와요.</p></div>');
+}
+function finishW(report) {
+  S.weekly = S.weekly.filter(w => weekStart(w.date) !== weekStart(F.date));
+  S.weekly.push({ date: F.date, day: F.day, phase: F.phase, items: F.items, report: F.report || report || null });
+  S.usedTopics = (S.usedTopics || []).concat(F.qs.map(q => q.text)).slice(-300);
+  save(); toast('저장했어요'); F = null; go('weekly');
+}
+
+</script>
+<script>go('today');</script>
+</body>
+</html>
